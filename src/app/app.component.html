@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="javascript:void(0)">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mynavbar">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item" style="margin-top:-12px;">
+          <a class="nav-link active" routerLink="bankerList">BankerList</a>
+        </li>
+        <li class="nav-item" style="margin-top:-12px;">
+          <a class="nav-link" routerLink="customerList">CustomerList</a>
+        </li>
+        <li class="nav-item" style="margin-top:-12px;">
+          <a class="nav-link" routerLink="application-list">Applications</a>
+        </li>
+        <li class="nav-item" style="margin-top:-12px;">
+          <a class="nav-link" routerLink="new-loan">New Loan</a>
+        </li>
+      </ul>
+      @if (loggedUserData) {
+      <form class="d-flex">
+        <span class="text-white"> {{loggedUserData.firstName}} </span>
+        <button class="btn btn-warning" type="button" routerLink="login" (click)="logOff()" fdprocessedid="saf5dv">LogOFF</button>
+      </form>
+      }
+      @else{
+      <form class="d-flex">
+        <button class="btn btn-primary" type="button" routerLink="login" fdprocessedid="saf5dv">Login</button>
+      </form>
+      }
+
+    </div>
+  </div>
+</nav>
+
+<router-outlet />
